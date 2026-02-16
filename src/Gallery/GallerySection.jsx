@@ -1,5 +1,5 @@
 import { Container } from "react-bootstrap";
-import "./Gallery.css";
+import "./gallery.css";
 import { BsInstagram } from "react-icons/bs";
 
 import g1 from "../assets/gallery-1.jpg";
