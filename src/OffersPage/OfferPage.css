@@ -1,0 +1,140 @@
+.product-card {
+  position: relative;
+  background: #fff;
+  border: 2px solid #e7e7e7;
+  border-radius: 12px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: all 0.35s ease;
+}
+
+.product-card:hover {
+  border-color: #28a745;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+.image-container {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-container img {
+  max-height: 160px;
+  object-fit: contain;
+}
+
+.hover-actions {
+  position: absolute;
+  top: 20px;
+  right: -60px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0;
+  transition: all 0.35s ease;
+}
+
+.product-card:hover .hover-actions {
+  right: 20px;
+  opacity: 1;
+}
+
+.action-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #28a745;
+  color: #fff;
+  border: none;
+}
+
+.product-name {
+  margin-top: 18px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.product-price {
+  color: #28a745;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.product-rating {
+  color: #ffc107;
+}
+
+.services-section {
+  padding: 100px 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.services-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.service-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.service-icon {
+  color: #f6c343;
+  transition: transform 0.3s ease-in-out;
+  display: inline-block;
+}
+
+.service-icon:hover {
+  transform: rotate(360deg);
+}
+
+.service-text h5 {
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 6px;
+  transition: color 0.3s;
+}
+
+.service-text p {
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  font-size: 14px;
+}
+
+.service-card:hover .service-text h5 {
+  color: #f6c343;
+}
+
+
+
+.client-slider {
+  background: #f7f7f7;
+  padding: 70px 0;
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  gap: 60px;
+  animation: scroll 20s linear infinite;
+}
+
+.slideEvanto {
+  height: 30px;
+  opacity: 0.4;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+

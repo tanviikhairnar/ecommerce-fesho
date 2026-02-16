@@ -1,0 +1,157 @@
+.fesho-news {
+  padding: 100px 0;
+  background: #fff;
+}
+
+.news-card {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  transition: all 0.4s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+}
+
+.news-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.news-img {
+  position: relative;
+  overflow: hidden;
+}
+
+/* image layer */
+.news-img img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+/* zoom */
+.news-card:hover .news-img img {
+  transform: scale(1.08);
+}
+
+/* shine layer */
+.news-img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.371),
+    transparent
+  );
+  transform: skewX(-25deg);
+  z-index: 2;
+}
+
+.news-card:hover .news-img::before {
+  animation: shine 0.9s ease forwards;
+}
+
+@keyframes shine {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 130%;
+  }
+}
+
+
+.date-badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: #4caf50;
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 0 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.date-badge span {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.date-badge small {
+  font-size: 12px;
+}
+
+
+.news-content {
+  padding: 28px;
+}
+
+.meta {
+  display: flex;
+  gap: 18px;
+  font-size: 14px;
+  color: #9a9a9a;
+  margin-bottom: 12px;
+}
+
+.meta i{
+  color: #f6c945;
+}
+.news-content h4 {
+  font-weight: 800;
+  font-size: 22px;
+  color: #0f2c1d;
+  margin-bottom: 14px;
+}
+
+.news-content p {
+  color: #6b6b6b;
+  line-height: 1.7;
+}
+
+.read-more {
+  margin-top: 18px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: #f7f5ee;
+  font-weight: 700;
+  color: #0f2c1d;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.read-more::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #f6c945;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+  z-index: -1;
+}
+
+.news-card:hover .read-more::before {
+  transform: translateX(0);
+}
+

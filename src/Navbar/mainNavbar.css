@@ -1,0 +1,37 @@
+.nav-hover {
+  font-weight: 500;
+  margin: 0 12px;
+  color: #333 !important;
+}
+
+.nav-hover:hover {
+  color: #1f6f43 !important;
+}
+
+.icon-hover {
+  cursor: pointer;
+  color: #333;
+  transition: 0.2s;
+}
+
+.icon-hover:hover {
+  color: #1f6f43;
+}
+
+.cart-wrapper {
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: #1f6f43;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+
+

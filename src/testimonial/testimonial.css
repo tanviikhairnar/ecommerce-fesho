@@ -1,0 +1,139 @@
+.testimonial-section {
+  position: relative;
+  background-image: url(../assets/pattern-5.png);
+  padding: 120px 0;
+  overflow: hidden;
+}
+
+.testimonial-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.sub-title {
+  color: #3bb77e;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.main-title {
+  font-size: 46px;
+  font-weight: 800;
+  color: #1c3b2f;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.desc {
+  color: #6f7d75;
+  margin-bottom: 25px;
+}
+
+.cards-wrapper {
+  display: flex;
+  gap: 30px;
+}
+
+.testimonial-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 80px 35px 60px;
+  width: 100%;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+}
+
+.green-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: #3bb77e;
+  border-radius: 20px 20px 0 0;
+}
+
+
+.profile-img {
+  width: 95px;
+  height: 95px;
+  border-radius: 15px;
+  object-fit: cover;
+  position: absolute;
+  top: -45px;
+  right: 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.stars {
+  color: #f5b50a;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.testimonial-card h5 {
+  font-weight: 700;
+  color: #1c3b2f;
+}
+
+.role {
+  font-size: 14px;
+  color: #8b8b8b;
+}
+
+.testimonial-card p {
+  margin-top: 20px;
+  color: #6f7d75;
+  line-height: 1.8;
+}
+
+.quote {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  font-size: 50px;
+  color: #f5b50a;
+  opacity: 0.25;
+}
+
+.organic-card {
+   display: flex;
+  background: #ffffff;
+  padding: 25px 30px;
+  border-radius: 10px;
+  width: fit-content;
+  min-width: 320px;
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+
+.organic-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.08);
+}
+
+.organic-icon {
+  width: 70px;
+  margin-right: 20px;
+}
+
+.organic-number {
+  font-size: 48px;
+  font-weight: 700;
+  color: #49a760;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.organic-subtitle {
+  font-size: 16px;
+  color: #2c3e3e;
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+
+.organic-divider {
+  height: 1px;
+  background-color: #e5e5e5;
+  width: 100%;
+}
