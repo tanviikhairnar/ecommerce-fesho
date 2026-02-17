@@ -10,6 +10,7 @@ import Testimonial from "./testimonial/testimonial";
 import NewsArticle from "./NewsAndArticals/NewsArtical";
 import Gallery from "./Gallery/GallerySection";
 import About from "./AboutUs/About";
+import ProductDetails from "./ProductDetails/ProductDetails";
 
 import Products from "./Products/Products";
 import Cart from "./ProductCart/Cart";
@@ -32,11 +33,13 @@ function App() {
                 <Testimonial />
                 <NewsArticle />
                 <Gallery />
-                <About/>
+                <About />
               </>
             }
           />
+
           <Route path="/products" element={<Products />} />
+          <Route path="/product-details" element={<ProductDetails />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/about" element={<About />} />
         </Routes>
@@ -48,5 +51,6 @@ function App() {
 }
 
 export default App;
+
 
 // for git update https://github.com/tanviikhairnar/ecommerce-fesho.git

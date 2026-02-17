@@ -46,6 +46,9 @@ function MainNavbar() {
               <NavDropdown.Item as={Link} to="/products">
                 Products
               </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/product-details">
+                Product Details
+              </NavDropdown.Item>
 
               <NavDropdown.Item as={Link} to="/cart">
                 Cart

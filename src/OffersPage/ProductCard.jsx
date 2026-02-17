@@ -1,10 +1,12 @@
 import { Heart, Basket, StarFill } from "react-bootstrap-icons";
 import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { CartContext } from "../ProductCart/CartContext";
 import { Modal, Button } from "react-bootstrap";
 
 const ProductCard = ({ product }) => {
   const { addToCart } = useContext(CartContext);
+  const navigate = useNavigate();
 
   const [showConfirm, setShowConfirm] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
@@ -20,7 +22,10 @@ const ProductCard = ({ product }) => {
       <div className="product-card">
 
         <div className="hover-actions">
-          <button className="action-btn">
+          <button
+            className="action-btn"
+            onClick={() => navigate("/product-details")}
+          >
             <Heart size={16} />
           </button>
 
@@ -49,11 +54,7 @@ const ProductCard = ({ product }) => {
         </div>
       </div>
 
-      <Modal
-        show={showConfirm}
-        onHide={() => setShowConfirm(false)}
-        centered
-      >
+      <Modal show={showConfirm} onHide={() => setShowConfirm(false)} centered>
         <Modal.Header closeButton>
           <Modal.Title>Confirm Action</Modal.Title>
         </Modal.Header>
@@ -70,11 +71,7 @@ const ProductCard = ({ product }) => {
         </Modal.Footer>
       </Modal>
 
-      <Modal
-        show={showSuccess}
-        onHide={() => setShowSuccess(false)}
-        centered
-      >
+      <Modal show={showSuccess} onHide={() => setShowSuccess(false)} centered>
         <Modal.Header closeButton>
           <Modal.Title>Success</Modal.Title>
         </Modal.Header>
@@ -92,5 +89,6 @@ const ProductCard = ({ product }) => {
 };
 
 export default ProductCard;
+
 
 

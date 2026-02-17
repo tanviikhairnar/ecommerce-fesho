@@ -1,16 +1,15 @@
-import { useContext } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { useContext, useState } from "react";
+import { Container, Row, Col, Modal, Button } from "react-bootstrap";
 import { CartContext } from "./CartContext";
 import heroBg from "../assets/productsbg.jpg";
 import "./cart.css";
 
 const Cart = () => {
-  const {
-    cartItems,
-    increaseQty,
-    decreaseQty,
-    removeItem,
-  } = useContext(CartContext);
+  const { cartItems, increaseQty, decreaseQty, removeItem } =
+    useContext(CartContext);
+
+  const [showModal, setShowModal] = useState(false);
+  const [selectedItemId, setSelectedItemId] = useState(null);
 
   const shipping = 70;
 
@@ -20,6 +19,17 @@ const Cart = () => {
   );
 
   const total = subtotal + shipping;
+
+  const handleRemoveClick = (id) => {
+    setSelectedItemId(id);
+    setShowModal(true);
+  };
+
+  const confirmRemove = () => {
+    removeItem(selectedItemId);
+    setShowModal(false);
+    setSelectedItemId(null);
+  };
 
   return (
     <>
@@ -35,7 +45,6 @@ const Cart = () => {
 
       <section className="cart-section py-5">
         <Container>
-
           <div className="cart-wrapper">
             <table className="custom-cart-table">
               <thead>
@@ -62,7 +71,7 @@ const Cart = () => {
                       <td>
                         <div
                           className="remove-circle"
-                          onClick={() => removeItem(item.id)}
+                          onClick={() => handleRemoveClick(item.id)}
                         >
                           ×
                         </div>
@@ -77,9 +86,7 @@ const Cart = () => {
                       </td>
 
                       <td className="text-start">
-                        <h6 className="product-name">
-                          {item.name}
-                        </h6>
+                        <h6 className="product-name">{item.name}</h6>
                       </td>
 
                       <td className="price">
@@ -91,19 +98,11 @@ const Cart = () => {
                           <span>{item.quantity}</span>
 
                           <div className="qty-buttons">
-                            <button
-                              onClick={() =>
-                                increaseQty(item.id)
-                              }
-                            >
+                            <button onClick={() => increaseQty(item.id)}>
                               +
                             </button>
 
-                            <button
-                              onClick={() =>
-                                decreaseQty(item.id)
-                              }
-                            >
+                            <button onClick={() => decreaseQty(item.id)}>
                               −
                             </button>
                           </div>
@@ -111,10 +110,7 @@ const Cart = () => {
                       </td>
 
                       <td className="total-price">
-                        $
-                        {(item.price * item.quantity).toFixed(
-                          2
-                        )}
+                        ${(item.price * item.quantity).toFixed(2)}
                       </td>
                     </tr>
                   ))
@@ -151,14 +147,34 @@ const Cart = () => {
               </div>
             </Col>
           </Row>
-
         </Container>
       </section>
+
+      <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+        <Modal.Header closeButton>
+          <Modal.Title>Remove Item</Modal.Title>
+        </Modal.Header>
+
+        <Modal.Body>
+          Are you sure you want to remove this item from your cart?
+        </Modal.Body>
+
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShowModal(false)}>
+            No
+          </Button>
+
+          <Button variant="success" onClick={confirmRemove}>
+            Yes, Remove
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 };
 
 export default Cart;
+
 
 
 
