@@ -39,7 +39,6 @@ const ProductDetails = () => {
 
   return (
     <>
-      {/* Hero Section */}
       <section
         className="shop-hero"
         style={{ backgroundImage: `url(${heroBg})` }}
@@ -50,12 +49,10 @@ const ProductDetails = () => {
         </Container>
       </section>
 
-      {/* Product Section */}
       <section className="py-5">
         <Container>
           <Row className="align-items-start">
 
-            {/* LEFT IMAGE */}
             <Col md={6}>
               <img
                 src={mainImage}
@@ -76,16 +73,13 @@ const ProductDetails = () => {
               </div>
             </Col>
 
-            {/* RIGHT CONTENT */}
             <Col md={6}>
 
-              {/* Title + Price */}
               <div className="d-flex justify-content-between align-items-center">
                 <h2 className="product-title">{product.name}</h2>
                 <h4 className="product-price">${product.price}.00</h4>
               </div>
 
-              {/* Rating */}
               <div className="product-rating mt-2">
                 {[...Array(5)].map((_, i) => (
                   <i key={i} className="bi bi-star-fill"></i>
@@ -165,6 +159,7 @@ const ProductDetails = () => {
                     <li>Aenean egestas orci eu maximus tincidunt.</li>
                     <li>Curabitur vel turpis id tellus cursus laoreet.</li>
                   </ul>
+                  <p>All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</p>
                 </>
               )}
 
